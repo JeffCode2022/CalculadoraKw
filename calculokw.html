@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Consumo de energía eléctrica</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="style.css">
+
+        <script>
+
+function algoritmo()
+{
+    let seleccion,dias,calculo,mes;
+   
+    seleccion=parseFloat (document.getElementById('seleccion').value);
+    cantidad=parseFloat(document.getElementById('cantidad').value);
+    dias=parseFloat(document.getElementById('dias').value);
+    mes=parseFloat(document.getElementById('mes').value);
+    seleccion=(seleccion/1000)*cantidad;
+    calculo=(seleccion*dias)*mes;
+   calculo=calculo.toFixed(2);
+    document.getElementById('calculo').value=calculo
+}
+ 
+
+        </script>
+</head>
+<body>
+    <form name="formulario1" class="stylecal">
+        <table style="text-align: left; margin-left: auto; margin-right: auto;">
+            <tbody>
+                <a href="index.html">Calculadora de KW a Soles</a>
+                <br>
+                <br>
+    <tr>
+        <div class="calculadora1">
+        <select class="form-select" aria-label="Default select example" name="seleccion" id="seleccion">
+            <option selected>selecione</option>
+            <option value="600">Aspiradora</option>
+            <option value="300">Cafetera</option>
+            <option value="300">Computadora</option>
+            <option value="3500">Ducha eléctrica</option>
+            <option value="80">Equipo de solido</option>
+            <option value="500">Lavadora</option>
+            <option value="300">Licuadora</option>
+            <option value="1100">Microondas</option>
+            <option value="350">Refrigeradora</option>
+            <option value="120">Televisor</option>
+            <option value="1500">Terma</option>
+            <option value="50">Ventilador</option>
+          </select>
+          <br>
+          <tr>
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Cantidad</label>
+                <input  name="cantidad" required="required" step="0.000001" type="number" class="form-control" id="cantidad" >
+              </div>
+          </tr>
+    <tr>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">¿Cuantas horas al día lo utilizas?</label>
+            <input  name="dias" required="required" step="0.000001" type="number" class="form-control" id="dias" >
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Ingrese el total de los dias utilizados al mes</label>
+            <input  name="mes" required="required" step="0.000001" type="number" class="form-control" id="mes" >
+          </div>
+          <div class="calcula">
+            <tr align="center">
+                <td colspan="3" rowspan="1">
+                    <input value="calculo" type="button" onclick="algoritmo()"  class="btn btn-success"> 
+                    <input type="reset" class="btn btn-danger"/>
+                </td>
+                <tr >
+                    <td>
+                        <br>
+                        
+                        <label for="calculo" for="formGroupExampleInput" class="form-label">Total del consumo en KW : </label>
+                    </td>
+                    <td>
+                        <br>
+                        <input name="calculo" step="0.001" type="number" class="form-control"  id="calculo" disabled/>
+                    </td>
+                </tr>
+    </tbody>
+    </table>
+    </form>
+</body>
+</html>
